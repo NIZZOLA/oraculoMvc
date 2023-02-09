@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container-fluid h-100">
+    <div class="row h-100 justify-content-center align-items-center">
+        <div class="col-lg-6 col-sm-12">
+            <h1 class="display-4 text-center">Bem vindo ao Oráculo</h1>
+            <form method="post">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="pergunta" placeholder="Digite aqui sua pergunta">
+                    <input type="submit" value="Enviar" class="btn btn-primary btn-block">
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    @if (ViewBag.Resposta != null)
+    {
+        <br />
+        <h1>Você perguntou: @ViewBag.Pergunta</h1>
+        <br />
+        <br />
+        <h2>@ViewBag.Resposta</h2>
+    }
+    @if (ViewBag.Error != null)
+    {
+        <br />
+        <h1>Você perguntou: @ViewBag.Pergunta</h1>
+        <br />
+        <br />
+        <h2 style="color:red">Houve um erro na comunicação</h2>
+        <h2 style="color:red">@ViewBag.Error</h2>
+    }
+
+</div>
